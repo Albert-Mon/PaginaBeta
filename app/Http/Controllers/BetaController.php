@@ -14,17 +14,29 @@ class BetaController extends Controller
     public function index(){
         return view('iniciopage.index');
     }
+    public function show(){
+        $contactos = Contacto::paginate();
+        //return $contactos;
+        return view('iniciopage.show', compact('contactos'));
+    }
+    
 
-    public function envioemails(){
+    public function envioemails(Request $request){
+        //return $request -> all(); //visualizar los registros
 
+        $contacto = new Contacto();
+        $contacto->nombre = $request->nombre;
+        $contacto->compañia = $request->compañia;
+        $contacto->telefono = $request->telefono;
+        $contacto->email = $request->email;
+        $contacto->asunto = $request->asunto;
+        $contacto->mensaje = $request->mensaje;
+        $contacto->save();
     }
 
     // public function create(){
     //     return view('iniciopage.create');
     // }
 
-    // public function show($contacto){
-    //     return view('iniciopage.show', compact('contacto'));
-    // }
 
 }

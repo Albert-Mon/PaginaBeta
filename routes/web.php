@@ -18,11 +18,14 @@ Route::get('/', function () {
 //     Route::get('contactos/{contacto}','show');    
 // });
 
+Route::get('contactoshow', [BetaController::class, 'show'])->name('contactoshow.show');
+
+Route::get('contactos/{contacto}', [BetaController::class, 'show2'])->name('contactos.show2');
 
 Route::get('contactos', [BetaController::class, 'index'])->name('contactos.index');
 
 Route::POST('contactos', [BetaController::class, 'envioemails'])->name('contactos.envioemails');
 
+
 // Route::get('contactos/create', [BetaController::class,'create'])->name('contactos.create');
 
-// Route::get('contactos/{contacto}', [BetaController::class, 'show'])->name('contactos.show');
