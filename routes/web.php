@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('contactoshow', [BetaController::class, 'show'])->name('contactoshow.show');
 
-Route::get('contactos/{contacto}', [BetaController::class, 'show2'])->name('contactos.show2');
+Route::get('contactos/{id}', [BetaController::class, 'show2'])->name('contactos.show2');
 
 Route::get('contactos', [BetaController::class, 'index'])->name('contactos.index');
 

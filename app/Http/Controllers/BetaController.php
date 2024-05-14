@@ -17,7 +17,12 @@ class BetaController extends Controller
         return view('iniciopage.show', compact('contactos'));
     }
 
-    public function show2($contacto){
+    public function show2($id){
+        
+        $contacto = Contacto::find($id);
+
+        // return $contactos;
+
         return view('iniciopage.show2', compact('contacto'));
     }
 
