@@ -27,5 +27,3 @@ Route::get('contactos', [BetaController::class, 'index'])->name('contactos.index
 Route::POST('contactos', [BetaController::class, 'envioemails'])->name('contactos.envioemails');
 
 
-// Route::get('contactos/create', [BetaController::class,'create'])->name('contactos.create');
-

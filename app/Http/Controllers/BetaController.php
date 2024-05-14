@@ -11,15 +11,20 @@ class BetaController extends Controller
     // public function __invoke(){
     //     return "Bienvenido a la beta";
     // }
-    public function index(){
-        return view('iniciopage.index');
-    }
     public function show(){
         $contactos = Contacto::paginate();
         //return $contactos;
         return view('iniciopage.show', compact('contactos'));
     }
-    
+
+    public function show2($contacto){
+        return view('iniciopage.show2', compact('contacto'));
+    }
+
+
+    public function index(){
+        return view('iniciopage.index');
+    }
 
     public function envioemails(Request $request){
         //return $request -> all(); //visualizar los registros
@@ -33,10 +38,5 @@ class BetaController extends Controller
         $contacto->mensaje = $request->mensaje;
         $contacto->save();
     }
-
-    // public function create(){
-    //     return view('iniciopage.create');
-    // }
-
 
 }

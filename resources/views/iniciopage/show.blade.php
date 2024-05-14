@@ -10,7 +10,7 @@
     <a href="{{route('contactos.index')}}">Inicio</a>
         @foreach ($contactos as $contact)
             <li> 
-                <a href="">{{$contact->nombre}}</a>
+                <a href="{{route('contactos.show2', $contact->id)}}">{{$contact->nombre}}</a>
             </li>
         @endforeach
     </ul>

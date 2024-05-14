@@ -12,6 +12,9 @@
         @endforeach
     </ul> --}}
 
+    <H3>Ponte en Contacto</H3>
+    <h4>Estaremos Gustosos de poder brindarte mayor información sobre nuestros servicios.</h4>
+
     <form action="{{route('contactos.envioemails')}}" method="POST">
         @csrf
         <label><br>
