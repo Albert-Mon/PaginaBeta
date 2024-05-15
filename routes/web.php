@@ -18,6 +18,7 @@ Route::get('/', function () {
 //     Route::get('contactos/{contacto}','show');    
 // });
 
+
 Route::get('contactoshow', [BetaController::class, 'show'])->name('contactoshow.show');
 
 Route::get('contactos/{id}', [BetaController::class, 'show2'])->name('contactos.show2');

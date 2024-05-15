@@ -8,6 +8,9 @@
     <h4>Bienvenido, este es el correo: {{$contacto->id}}</h4>
         <br> Con el nombre: {{$contacto->nombre}}
         <br> Compañia: {{$contacto->compañia}}
-        <br> Telefono: {{$contacto->telefono}}        
+        <br> Telefono: {{$contacto->telefono}}
+        <br> Email: {{$contacto->email}}
+        <br> Asunto: {{$contacto->asunto}}
+        <br> Mensaje: {{$contacto->mensaje}}        
 
 @endsection
