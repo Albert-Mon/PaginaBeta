@@ -14,6 +14,7 @@
 
     <H3>Ponte en Contacto</H3>
     <h4>Estaremos Gustosos de poder brindarte mayor información sobre nuestros servicios.</h4>
+    <a href="{{route('contactoshow.show')}}">DATOS DE CONTACTO</a>
 
     <form action="{{route('contactos.envioemails')}}" method="POST">
         @csrf

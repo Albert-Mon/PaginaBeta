@@ -5,6 +5,7 @@
 @section('content')
     <h1>MANTENIMIENTO Y CONSTRUCCIÓN <br> DAYIT S.A DE C.V.</h1>
     <H3>Imagínalo, Nosotros lo Construimos.</H3>
+    <a href=" {{route('contactoshow.show')}} ">REGRESAR</a>
     <h4>Bienvenido, este es el correo: {{$contacto->id}}</h4>
         <br> Con el nombre: {{$contacto->nombre}}
         <br> Compañia: {{$contacto->compañia}}
