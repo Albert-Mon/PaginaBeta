@@ -19,12 +19,13 @@ Route::get('/', function () {
 // });
 
 
-Route::get('contactoshow', [BetaController::class, 'show'])->name('contactoshow.show');
+ROUTE::controller(BetaController::class)->group(function(){
+    Route::GET('contactoshow', 'show')->name('contactoshow.show');
+    Route::GET('contactos/{id}', 'show2')->name('contactos.show2');
+    Route::GET('contactos', 'index')->name('contactos.index');
+    Route::POST('contactos', 'envioemails')->name('contactos.envioemails');
+    ROUTE::GET('contactos/{contacto}/editar', 'editar')->name('contactos.editar');
+});
 
-Route::get('contactos/{id}', [BetaController::class, 'show2'])->name('contactos.show2');
-
-Route::get('contactos', [BetaController::class, 'index'])->name('contactos.index');
-
-Route::POST('contactos', [BetaController::class, 'envioemails'])->name('contactos.envioemails');
 
 

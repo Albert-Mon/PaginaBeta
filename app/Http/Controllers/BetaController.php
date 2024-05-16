@@ -12,17 +12,14 @@ class BetaController extends Controller
     //     return "Bienvenido a la beta";
     // }
     public function show(){
-        $contactos = Contacto::paginate();
+        $contactos = Contacto::orderBy('id','desc')->paginate();
         //return $contactos;
         return view('iniciopage.show', compact('contactos'));
     }
 
-    public function show2($id){
-        
-        $contacto = Contacto::find($id);
-
+    public function show2(Contacto $contacto){
+        //$contacto = Contacto::find($id);
         // return $contactos;
-
         return view('iniciopage.show2', compact('contacto'));
     }
 
@@ -42,6 +39,17 @@ class BetaController extends Controller
         $contacto->asunto = $request->asunto;
         $contacto->mensaje = $request->mensaje;
         $contacto->save();
+        //para redireccionar a la vista principal
+        return redirect()->route('contactos.index');
+        //para redireccionar al registro guardado en el momento
+        //return redirect()->route('contactos.show2', $contacto);
+
+    }
+
+    public function editar(Contacto $contacto){
+        // $contacto = Contacto::find($id);
+        // return $contacto;
+        return $contacto;
     }
 
 }
